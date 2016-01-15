@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Fuzzing",
+  "description": "Fuzzing",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "notifications",
+    "http://*/",
+    "https://*/"
+  ],
+  "content_scripts":[
+    {
+      "matches": ["*://*/*"],
+      "js": ["arrive.min.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
